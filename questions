@@ -1,0 +1,28 @@
+1:https://www.geeksforgeeks.org/problems/recursively-remove-all-adjacent-duplicates0744/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=practice_card   
+in this question we have to recursively remove adjacent similar words. we have to remember in step s[i]==s[i+1] wwe increment i to i+1 but in while loop i again increments so that letter is no more in new
+string. here is the code:
+#User function Template for python3
+
+class Solution:
+    def removeUtil (self, S):
+        def remove_adjacent_duplicates(s):
+            if not s:
+                return s  
+        
+            n = len(s)
+            i = 0
+            new_s = ""
+        
+            while i < n:
+                if i < n - 1 and s[i] == s[i + 1]:
+                    while i < n - 1 and s[i] == s[i + 1]:
+                        i += 1  
+                else:
+                    new_s += s[i]  
+        
+                i += 1  
+        
+            return s if new_s == s else remove_adjacent_duplicates(new_s)
+        return remove_adjacent_duplicates(S)
+
+

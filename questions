@@ -25,4 +25,19 @@ class Solution:
             return s if new_s == s else remove_adjacent_duplicates(new_s)
         return remove_adjacent_duplicates(S)
 
+2:https://leetcode.com/problems/min-cost-climbing-stairs/     in this question we have to reach to the end ie beyond last index so we take to two 
+elements a,b for last element and for beyond last element. then we iterate and change b to a and a to temp:
+code : class Solution:
+    def minCostClimbingStairs(self, cost: List[int]) -> int:
+        a, b = cost[-1], 0
+
+
+        for n in range(len(cost) - 2, -1, -1):
+            temp = min(a + cost[n], b + cost[n])
+            b = a
+            a = temp
+        
+        return min(a, b)
+        
+
 

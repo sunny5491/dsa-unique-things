@@ -39,5 +39,6 @@ code : class Solution:
         
         return min(a, b)
         
-
+3: https://www.geeksforgeeks.org/batch/gfg-160-problems/track/recursion-and-backtracking-gfg-160/problem/permutations-of-a-given-string2041 
+try this question
 
